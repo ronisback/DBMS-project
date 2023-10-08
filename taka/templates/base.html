@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+</head>
+<style>
+ 
+  hi{
+    background: -webkit-linear-gradient(rgb(400, 12, 1), rgb(180, 100, 200));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+</style>
+
+<body>
+    <nav>
+        <div class="hnav_upper">
+            <div class="hnav_upper_left">
+            <a href="{% url "home" %}"><hi><b>TAKA</b></hi></a>
+            </div>
+            <div class="hnav_upper_middle">
+                <form class="example" action="action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+            </div>
+            <div class="hnav_upper_right">
+                <a href="profile.html">
+                <img class="profile" src="{% static 'img/profile.png' %}">
+                </a>
+            </div>
+        </div>
+        </nav>
+
+        <div class="sidebar">
+          <h3></h3>
+          <ul>
+              <b><li><a href="{% url "income" %}">Income</a></li></b>
+              <b><li><a href="{% url "income" %}">Home</a></li></b>
+              <b><li><a href="{% url "income" %}">Home</a></li></b>
+              <b><li><a href="{% url "income" %}">Home</a></li></b>
+              <b><li><a href="{% url "income" %}">Home</a></li></b>
+              <b><li><a href="{% url "income" %}">Home</a></li></b>
+              <b><li><a href="{% url "income" %}">Home</a></li></b>
+              <b><li><a href="{% url "income" %}">Home</a></li></b>
+              <b><li><a href="{% url "income" %}">Home</a></li></b>
+          </ul>
+      </div>
+  
+      <div class="content">
+          <h1>Main Content</h1>
+          <p>This is the main content of the web page.</p>
+      </div>
+  
+      <script src="{% static "js/base.js" %}"></script>
+        
+</body>
+</html>

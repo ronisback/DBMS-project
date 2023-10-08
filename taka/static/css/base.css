@@ -1,0 +1,138 @@
+*
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .hnav_upper
+    {
+        background-color: #3F5748;
+    display: flex;
+    height:70px;
+    width: 100%;
+    color: white;
+    
+
+    }
+    .hnav_upper_left
+    {
+        align-items: center;
+        gap: 8px;
+        width: 33%;
+        padding: 15px;
+        font-size: 30px;
+    }
+    .hnav_upper_middle
+    {
+        
+        width: 34%;
+        text-align: center;
+        padding-top:15px;
+    }
+    .hnav_upper_right
+    {
+
+        width: 33%;
+        text-align: end;
+        justify-content: center;
+
+    }
+    .profile
+    {
+        height: 65px;
+        padding: 0%;
+        border-radius: 100%;
+        padding: 2%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+  box-sizing: border-box;
+
+}
+
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; 
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+
+a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.sidebar {
+    width: 250px;
+    background-color: rgb(19,77,65);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+}
+
+.sidebar h3 {
+    text-align: center;
+    padding: 10px;
+}
+
+.sidebar ul {
+    padding: 0;
+}
+
+.sidebar ul b li {
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar ul b li a {
+    text-decoration: none;
+    color: #a2b343;
+    font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #360d0d;
+}
+
+
+.content {
+    /* margin-left: 250px; */
+    width: 100%;
+    padding: 10px;
+}

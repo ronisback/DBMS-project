@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:rgb(19,77,65);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      width: 300px;
+      margin: 0 auto;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color:white;
+      
+      
+      -;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form action="login.php" method="POST">
+    <h1>Login form</h1>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="submit" value="Login">
+    <div class="forgot-password">
+      <a href="forgot_password.php">Forgot Password?</a>
+    </div>
+  </form>
+</body>
+</html>

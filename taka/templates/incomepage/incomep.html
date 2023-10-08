@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+</head>
+<style>
+ 
+  hi{
+    background: -webkit-linear-gradient(rgb(400, 12, 1), rgb(180, 100, 200));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 18px;
+    text-align: center;
+    font-size:20px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+.expense-list {
+    background-color: #fff;
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.expense-list h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+</style>
+
+<body>
+    <nav>
+        <div class="hnav_upper">
+            <div class="hnav_upper_left">
+            <a href="{% url 'home' %}"><hi><b>eWallet</b></hi></a>
+            </div>
+            <div class="hnav_upper_middle">
+                <form class="example" action="action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+            </div>
+            <div class="hnav_upper_right">
+                <a href="#">
+                <img class="profile" src="{% static 'img/profile.png' %}">
+                </a>
+            </div>
+        </div>
+        </nav>
+        <div style="display:flex;">
+        <div class="sidebar">
+          <h3></h3>
+          <ul>
+            <b><li><a href="{% url 'income' %}">Income</a></li></b>
+            <b><li><a href="{% url 'expense' %}">Expense</a></li></b>
+            <b><li><a href="{% url 'budget' %}">Budget</a></li></b>
+            <b><li><a href="{% url 'savings' %}">Savings</a></li></b>
+            <b><li><a href="{% url 'debt' %}">Debt</a></li></b>
+            <b><li><a href="{% url 'invest' %}">Investment</a></li></b>
+            <b><li><a href="{% url 'accounts' %}">Accounts</a></li></b>
+            <b><li><a href="{% url 'payment' %}">Bill Payment Remainder</a></li></b>
+            <b><li><a href="{% url 'finance' %}">Financial Dashboard</a></li></b>
+          </ul>
+      </div>
+      <div class="content">
+        <div class="container">
+            <form class="expense-form" action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit">Add Income</button>
+            </form>
+        </div>
+        <div class="expense-list">
+            <h2>Income List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Upate</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    {% for i in incomes %}
+                    <tr>
+                        <td>{{i.category}}</td>
+                        <td>{{i.description}}</td>
+                        <td>{{i.amount}}</td>
+                        <td>{{i.date}}</td>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'iupdate' i.id %}">Update</a></td>
+                        <td><a class="btn btn-danger" href="{% url 'idelete' i.id %}">Delete</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+
+        
+      </div>
+  </div>
+      <script src="{% static 'js/base.js' %}"></script>
+      <script>
+        
+      </script>
+        
+</body>
+</html>

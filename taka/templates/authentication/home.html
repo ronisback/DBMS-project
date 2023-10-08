@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <title>eWallet</title>
+</head>
+<style>
+    .btnLogin-popup
+{
+    color: #141a34;
+    background: #fff;
+    font-weight:bold;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size:20px;
+}
+.btnLogin-popup:hover
+{
+    background-color: #141a34;
+    color: #fff;
+}
+</style>
+<body>
+  <nav>
+    <div class="nav_upper">
+        <div class="nav_upper_left">
+        <img class="Logo" src="{% static 'img/money.png' %}">
+        </div>
+        <div class="nav_upper_right">
+          <button class="btnLogin-popup">Login</button>
+        </div>
+    </div>
+    </nav>
+
+<div style="display: block; position: absolute;" >
+    <div class="wrapper" style="margin-left: 100%;">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+    
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#" method="post">
+                    {% csrf_token %}
+    
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="text" name="username" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" name="pass" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox"> Remember me</label>
+
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="login-register">
+                        <p>Don't have account?<a
+                             href="#" class="register-link">Register</a>
+                        </p>
+                    </div>
+                </form>
+            </div> 
+    
+             <div class="form-box register"> 
+                <h2>Registration</h2>
+                <form action="#" method="post">
+                    {% csrf_token %}
+    
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="person">
+                            </ion-icon>
+                        </span>
+    
+                        <input type="text" name="username" required>
+                        <label>Username</label>
+                    </div>
+    
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail">
+    
+                            </ion-icon></span>
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox"> I am agree to the terms & conditions</label>
+                    </div>
+    
+                    <button type="submit" class="btn">Register</button>
+                    <div class="login-register">
+                        <p>Already have account?
+                             <a href="#" class="login-link">Login</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+</div>
+    
+  
+
+    <div class="middle" >
+        
+        
+
+        <div class="middle_left">
+            <div class="Big_notes">
+                <p>Let add some </p>
+                <p>elegance into </p>
+                <p>your finance..</p>
+            </div>
+            <div class="Small_notes">
+                <p>Simplify your financial journey with us.. </p>
+            </div>
+            
+            
+        </div>
+        <div class="middle_right">
+            <img class="money" src="{% static 'img/teha.png' %}">
+            
+        </div>
+
+    </div>  
+    
+    <script src="{% static 'js/script.js' %}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
